@@ -1,22 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Cat Store</title>
   
-    <!-- google fonts -->
-  
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400&family=Grenze+Gotisch:wght@300;400&display=swap" rel="stylesheet">
-  
-    <!-- css -->
-    <link rel="icon" href="../media/img/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link href="../style/style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Cat Store</title>
+
+  <!-- bootstrap -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+  <!-- google fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400&family=Grenze+Gotisch:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- css -->
+  <link rel="icon" href="./media/img/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link href="../css/styles.css" rel="stylesheet">
+
 </head>
-<body>
-    
+<body class="en-columna inicio">
+
+  <header class="cabecera">
+
+    <!-- cabecera del usuario -->
+    <section class="encabezado-1 flex-row tema-claro">
+
+      <h5><a href="./crear-cuenta.html">Crear Cuenta</a></h5>
+      <h5><a href="./iniciar-sesion.html">Iniciar Sesion</a></h5>
+
+    </section>
+
+    <!-- cabecera de navegacion -->
+
+    <section class="encabezado-2 flex-column tema-oscuro">
+
+      <div class="titulo flex-row">
+
+        <a href="#"><img src="../media/img/search.png" alt="busqueda"></a>
+        <a href="../index.html"><h1>Black Cat Store</h1></a>
+        <a href="#"><img src="../media/img/paper-bag.png"></a>
+
+      </div>
+
+      <nav class="nav flex-row">
+
+        <ul class="flex-row">
+
+          <a href="../index.html"><li>Inicio</li></a>
+          <a href="./ofertas.html"><li>Ofertas</li></a>
+          <a href="./productos.html"><li>Productos</li></a>
+          <a href="./contacto.html"><li>Contactos</li></a>
+          <a href="./nosotros.html"><li>Nosotros</li></a>
+
+        </ul>
+      </nav>
+    </section>
+  </header>
+
+  <main class="main-contacto">
+
+    <section class="container-contacto flex-column">
+      
+      <div class="div-titulo">
+        <h2>Contactanos</h2>
+      </div> 
+
+      <div class="info">
+
+        <input class="input-normal" type="text" placeholder="Nombre">
+        <input class="input-normal" type="text" placeholder="Correo Electronico">
+        <input class="input-telefono" type="text" placeholder="Telefono">
+        <input class="input-comentario" type="text-area" placeholder="Comentario">
+      
+        <div class="link-submit">
+          <button class="submit-button" type="submit">Enviar</button>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="flex-column tema-oscuro">
+
+    <!-- Metodos de Contacto -->
+
+    <div class="medios-de-contacto nav">
+      
+        <ul class="flex-row tema-oscuro">
+
+          <li>
+            <p><img src="../media/img/mail.png" alt="correo electronico">
+            blackcatstore@gmail.com</p>
+          </li>
+
+          <li>
+            <a href="#" target="_blank"><p><img src="../media/img/instagram.png" alt="instagram">
+            @black.cat</p></a>
+          </li>
+
+          <li>
+            <a href="#" target="_blank"><p><img src="../media/img/tiktok.png" alt="tiktok">
+            @black.cat</p></a>
+          </li>
+        </ul>
+    </div>
+
+    <div class="medios-de-pago nav tema-oscuro">
+
+      <ul class="flex-row">
+        
+        <li><img src="../media/img/mastercard.png" alt="mastercard"></li>
+        <li><img src="../media/img/visa.png" alt="visa"></li>
+        <li><img src="../media/img/modo.png" alt="visa"></li>
+        <li><img src="../media/img/mercado-pago.png" alt="visa"></li>
+
+      </ul>
+    </div>
+
+    <div class="copyrigth flex-row tema-claro">
+
+      <p>Copyright Black Cat - 2023. Todos los derechos reservados.</p>
+
+    </div>
+
+  </footer>
+
+  <!-- bootstrap script -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
 </body>
 </html>

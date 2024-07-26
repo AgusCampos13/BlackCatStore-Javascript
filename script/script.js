@@ -1,115 +1,180 @@
 //productos
-let nombre_carrito = []
-let precio_carrito = []
+let carrito = []
 let total_carrito = 0
 
 //usuarios
 let usuarios = [] 
-let claves = []
 
+class Usuario{
 
-//invocacion de funciones
+    static id = 0
 
-alert('Vamos a crearte una cuenta :D')
+    constructor(nombre, apellido, email, clave){
+        
+        this.id = ++Usuario.id
+        this.nombre = nombre
+        this.apellido = apellido
+        this.email = email
+        this.clave = clave
 
-let email = prompt('Ingresa tu mail:')
-let clave = prompt('Ingresa tu clave: ')
-
-if (crearCuenta(email, clave)){
-    alert('Cuenta Creada con Exito!')
-
-    alert('Ahora ingresa con tu cuenta')
-    email = prompt('Ingresa tu mail:')
-    clave = prompt('Ingresa tu clave: ')
-
-    if(iniciarSesion(email, clave)){
-
-        alert('A comprar!')
-        let seguir
-        do{
-            
-            let producto = prompt('Ingresa un producto')
-            let precio = prompt('Ingresa su precio')
-
-            agregarProducto(producto, parseInt(precio, 10))
-            alert('Producto Agregado con Exito!')
-
-            seguir = prompt('Deseas continuar?(S/N)') 
-            seguir.toLowerCase
-
-            verCarrito()
-
-        }while(seguir == 's')
-            
-        alert('Total a Pagar: ' + total_carrito + '$')
     }
 }
+
+class Producto{
+
+    static id = 0
+
+    constructor(nombre, precio, cantidad){
+        
+        this.id = ++Producto.id
+        this.nombre = nombre
+        this.precio = precio
+        this.cantidad = cantidad
+
+    }
+}
+
+// Listeners -------------------------------------------------------------------------------------------------------
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const formulario = document.getElementById('form-iniciar-sesion');
+
+    formulario.addEventListener('submit', function(event) {
+
+        // console.log('Llego el evento')
+
+        // Datos Iniciales Para Pruebas
+        usuarios.push(new Usuario('Agustina', 'Campos', 'agus@gmail.com', 'clave123'))
+
+        event.preventDefault(); // Evita el envío del formulario
+
+        const access_correo_electronico = document.getElementById('access-correo-electronico').value;
+        const access_clave = document.getElementById('access-clave').value
+
+        // console.log('Valor del input_correo_electronico:', input_correo_electronico);
+        // console.log('Valor del input_clave:', input_clave);
+
+
+        iniciarSesion(access_correo_electronico, access_clave);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const formulario = document.getElementById('form-crear-cuenta');
+
+    formulario.addEventListener('submit', function(event) {
+
+        //console.log('Llego el evento')
+
+        event.preventDefault(); // Evita el envío del formulario
+
+        const create_correo_electronico = document.getElementById('create-correo-electronico').value;
+        const create_clave = document.getElementById('create-clave').value
+        const create_nombre = document.getElementById('create-nombre').value;
+        const create_apellido = document.getElementById('create-apellido').value
+
+        crearCuenta(create_nombre, create_apellido, create_correo_electronico, create_clave)
+    });
+});
+
+document.querySelectorAll('.cart-button').forEach(boton => {
+    boton.addEventListener('click', function() {
+        const nombre = this.getAttribute('data-nombre');
+        const precio = parseFloat(this.getAttribute('data-precio'));
+
+        //console.log(id + " " + nombre + " " + precio + " ")
+        agregarProducto(nombre, precio, 1);
+        verCarrito()
+    });
+});
+
 
 
 //-------------------------------------------------------------------------------------------------------
 
 //productos
-function agregarProducto(producto, precio){
+function agregarProducto(nombre, precio, cantidad){
 
-    nombre_carrito.push(producto)
-    precio_carrito.push(precio)
+    for(let i = 0; i < carrito.length; i ++){
 
-    total_carrito = total_carrito + precio
+        if (carrito[i].nombre == nombre){
+            //el producto ya esta en el carrito
+
+            carrito[i].cantidad ++
+        }
+    }
+
+    carrito.push(new Producto(nombre, precio, cantidad))
+    alert("El producto fue agregado con exito!") 
+    calcularTotalCarrito()
+}
+
+function calcularTotalCarrito(){
+
+    let aux_total_carrito = 0; 
+
+    for(let i = 0; i < carrito.length; i ++){
+
+        aux_total_carrito = aux_total_carrito + (carrito[i].precio * carrito[i].cantidad)
+    }
+
+    total_carrito = aux_total_carrito 
 }
 
 function verCarrito(){
 
-    for (let i = 0; i < nombre_carrito.length; i++){
+    for (let i = 0; i < carrito.length; i++){
 
-        console.log('Item N° ' + (i + 1) + ' - ' +  nombre_carrito[i] + ' - $' + precio_carrito[i])  
+        //console.log(carrito[i])  
     }
 
-    console.log('Total a Pagar: ' + total_carrito + '$') 
+    alert('Total a Pagar: ' + total_carrito + '$') 
 }
 
 //iniciar sesion
 function iniciarSesion(email, clave){
 
-    //console.log('Entra! email:' + email + ' clave: ' + clave)
+    for(let i = 0; i < usuarios.length; i ++){
 
-    let indice_usuario = usuarios.indexOf(email)
+        if (usuarios[i].email == email){
 
-    //console.log('indice_usuario: ' + indice_usuario)
-    if(indice_usuario != -1){
-        
-        if(comparaArrays(claves[indice_usuario], clave)){
-            alert('Acceso Concedido!')
-            return true
-
-        }else{
-            console.warn('Acceso Denegado!')
-            return false
+            if(comparaArrays(usuarios[i].clave, clave)){
+                alert('Acceso Concedido!')
+                return true
+    
+            }else{
+                alert('Acceso Denegado!')
+                return false
+            }
         }
-
-    }else{
-        console.warn('El usuario ingresado no existe')
-        return false
     }
+
+    alert('El usuario ingresado no existe')
+    return false
 }
 
-// crear cuenta 
-function crearCuenta(email, clave){
+function crearCuenta(nombre, apellido, email, clave){
 
-    // console.log('Entra! email:' + email + ' clave: ' + clave)
+    //console.log('Entra! email:' + email + ' clave: ' + clave)
     //console.log('(usuarios.indexOf(email) != -1: ' + (usuarios.indexOf(email)))
 
-    if(usuarios.indexOf(email) != -1){
-        console.warn('El usuario ya existe')
+    for(let i = 0; i < usuarios.length; i ++){
 
-        return false
-
-    }else{
-        usuarios.push(email)
-        claves.push(clave)
-
-        return true
+        if (usuarios[i].email == email){
+            alert('El usuario ya existe')
+            return false
+        }
     }
+
+    usuarios.push(new Usuario(nombre, apellido, email, clave))
+    alert('El usuario fue creado con exito')
+
+    //console.log(usuarios)
+
+    return true
 }
+
 
 //utilidad
 function comparaArrays(array1, array2){

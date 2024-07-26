@@ -1,42 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Black Cat Store</title>
-    
+
+  <!-- bootstrap -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
   <!-- google fonts -->
-    
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400&family=Grenze+Gotisch:wght@300;400&display=swap" rel="stylesheet">
-    
+
   <!-- css -->
   <link rel="icon" href="./media/img/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-  <link href="../style/style.css" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
 
-    <!--javascript -->
-    <script defer src="./script/script.js"></script>
+  <!-- script -->
+  <script defer src="../script/script.js"></script>
 
 </head>
 <body class="en-columna inicio">
+
   <header class="cabecera">
+
     <!-- cabecera del usuario -->
-    <section class="cabecera-usuario en-renglon">
+    <section class="encabezado-1 flex-row tema-claro">
 
       <h5><a href="./crear-cuenta.html">Crear Cuenta</a></h5>
       <h5><a href="./iniciar-sesion.html">Iniciar Sesion</a></h5>
-
-      <!-- <img src="./media/img/user.png" alt="usuario">  -->
 
     </section>
 
     <!-- cabecera de navegacion -->
 
-    <section class="cabecera-navegacion en-columna centrado">
+    <section class="encabezado-2 flex-column tema-oscuro">
 
-      <div class="titulo-logo en-renglon">
+      <div class="titulo flex-row">
 
         <a href="#"><img src="../media/img/search.png" alt="busqueda"></a>
         <a href="../index.html"><h1>Black Cat Store</h1></a>
@@ -44,9 +50,9 @@
 
       </div>
 
-      <nav class="nav-bar en-renglon">
+      <nav class="nav flex-row">
 
-        <ul>
+        <ul class="flex-row">
 
           <a href="../index.html"><li>Inicio</li></a>
           <a href="./ofertas.html"><li>Ofertas</li></a>
@@ -55,46 +61,46 @@
           <a href="./nosotros.html"><li>Nosotros</li></a>
 
         </ul>
-
       </nav>
-
     </section>
+  </header>
 
-  </header> 
-  
-  <main class="pestana en-renglon centrado">
+  <main class="main-registro">
 
-    <section class="container-inicio-sesion en-columna-flex centrado">
+    <div class="super-container-inicio-sesion">
+      <section class="container-inicio-sesion flex-column">
 
-      <h2>Registrarse</h2>
+        <h2>Registrarse</h2>
 
-      <!-- <h3>Correo Electrónico</h3> -->
-      <input type="text" placeholder="Correo Electrónico">
+        <form id="form-crear-cuenta">
 
-      <!-- <h3>Contraseña</h3> -->
-      <input type="text" placeholder="Contraseña">
+          <input id="create-correo-electronico" type="text" placeholder="Correo Electrónico">
+          <input id="create-clave" type="password" placeholder="Contraseña">
+          <input id="create-nombre" type="text" placeholder="Nombre/s">
+          <input id="create-apellido" type="text" placeholder="Apellido/s">
 
-      <input type="text" placeholder="Nombre/s">
-      <input type="text" placeholder="Apellido/s">
+          <div class="link-submit flex-column">
 
-      <div class="submit en-columna-flex centrado">
+            <p>¿Ya tenes una cuenta? <a href="./iniciar-sesion.html">Inicia Sesión</a></p>
 
-        <p>¿Ya tenes una cuenta? <a href="./iniciar-sesion.html">Inicia Sesión</a></p>
+            <button class="submit-button" type="submit">Registrarse</button>
+          
+          </div>
 
-        <button class="borde" type="submit">Registrarse</button>
-      
-      </div>
 
-    </section>
+        </form>
+      </section>
+    </div>
 
   </main>
-  <footer class="pie-de-pagina en-columna centrado">
+
+  <footer class="flex-column tema-oscuro">
 
     <!-- Metodos de Contacto -->
 
     <div class="medios-de-contacto nav">
       
-        <ul class="en-renglon centrado">
+        <ul class="flex-row tema-oscuro">
 
           <li>
             <p><img src="../media/img/mail.png" alt="correo electronico">
@@ -113,9 +119,9 @@
         </ul>
     </div>
 
-    <div class="medios-de-pago nav">
+    <div class="medios-de-pago nav tema-oscuro">
 
-      <ul class="en-renglon centrado">
+      <ul class="flex-row">
         
         <li><img src="../media/img/mastercard.png" alt="mastercard"></li>
         <li><img src="../media/img/visa.png" alt="visa"></li>
@@ -125,12 +131,17 @@
       </ul>
     </div>
 
-    <div class="copyrigth en-renglon centrado">
+    <div class="copyrigth flex-row tema-claro">
 
       <p>Copyright Black Cat - 2023. Todos los derechos reservados.</p>
 
     </div>
 
   </footer>
+
+  <!-- bootstrap script -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
 </body>
 </html>

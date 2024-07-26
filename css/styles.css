@@ -1,0 +1,345 @@
+.footer, .medios-de-contacto, .medios-de-pago, .copyrigth, .container-contacto .info, .main-registro, .container-inicio-sesion, .link-submit, .container-opiniones, .container-productos, .main-pages .portada, .main .portada, .main-pages, .main {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-contacto .info, .container-contacto, .main-contacto {
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  font-family: "Assistant", sans-serif;
+  font-weight: 90px;
+}
+
+input:focus {
+  outline: none;
+}
+
+a, a:hover, .nav li {
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column, .producto {
+  display: flex;
+  flex-direction: column;
+}
+
+.tema-claro, .tema-claro a {
+  color: #121212;
+  background-color: rgb(243, 243, 243);
+}
+
+.tema-oscuro, .tema-oscuro a {
+  background-color: #121212;
+  color: rgb(243, 243, 243);
+}
+
+.encabezado-2 h1, .main h2, .main-pages h2 {
+  font-family: "Grenze Gotisch", serif;
+  font-weight: 200px;
+}
+
+header .nav li:hover {
+  text-decoration: underline;
+}
+
+.encabezado-1, .encabezado-2 {
+  width: 100%;
+}
+
+.encabezado-1 {
+  justify-content: end;
+  align-items: center;
+  height: 4vh;
+}
+.encabezado-1 a {
+  margin: 0 1rem 1rem 0;
+  font-size: 1rem;
+}
+
+.encabezado-2 {
+  height: auto;
+}
+
+.titulo {
+  justify-content: space-between;
+  align-items: center;
+}
+.titulo img {
+  width: 2.5vh;
+  margin: 0 1rem 0 1rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.nav ul {
+  list-style: none;
+  overflow: hidden;
+  margin: 0 0 2vh 0;
+  padding: 0;
+}
+.nav li {
+  display: inline-block;
+  margin: 0 0.25rem 0 0.25rem;
+}
+
+.producto .cart-button{
+
+  border: none;
+  background-color: transparent;
+}
+
+.main-pages .pages-button-1, .main .pages-button-1 {
+  background-color: transparent;
+  color: rgb(243, 243, 243);
+  cursor: pointer;
+  border: solid;
+  border-color: rgb(243, 243, 243);
+  border-width: 0.1vh;
+}
+.main-pages .portada, .main .portada {
+  position: relative;
+  background-color: rgb(243, 243, 243);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 70vh;
+}
+.main-pages .portada button, .main .portada button {
+  height: 3rem;
+  width: 10rem;
+  transition: all 0.2s;
+}
+.main-pages .portada button:hover, .main .portada button:hover{
+  transform: scale(1.1);
+  background-color: rgb(243, 243, 243);
+  color: #121212;
+  border: none;
+}
+
+.cart-button{
+
+  transform: scale(1.2);
+}
+
+.main-pages .div-titulo, .main .div-titulo {
+  padding-top: 1vh;
+}
+
+.main-pages {
+  background-color: rgb(243, 243, 243);
+}
+.main-pages .portada {
+  background-image: url(../media/img/img-nosotros.jpg);
+}
+.main-pages .div-titulo {
+  border-top: solid rgb(243, 243, 243) 0.75px;
+}
+.main-pages .barra-busqueda {
+  border: solid;
+  border-color: rgb(243, 243, 243);
+  border-width: 0.1vh;
+  border-radius: 2px;
+  height: 2.5rem;
+}
+
+.main .portada {
+  background-image: url(../media/img/img-inicio.jpg);
+}
+
+.main-texto {
+  padding: 8vh 4vh 3vh 4vh;
+  text-align: start;
+}
+.main-texto h4 {
+  font-size: 16px;
+  font-style: italic;
+}
+.main-texto p {
+  margin-bottom: 5vh;
+}
+.main-texto ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sc-productos h2 {
+  margin-top: 3rem;
+}
+.sc-productos button {
+  height: 2.5rem;
+  width: 6rem;
+  transition: all 0.2s;
+}
+.sc-productos button:hover {
+  background-color: rgb(243, 243, 243);
+  color: #121212;
+  border: none;
+}
+
+.container-productos {
+  flex-wrap: wrap;
+}
+.container-productos .producto {
+  margin: 2vh 1vh 2vh 1vh;
+  justify-content: start;
+  align-items: start;
+}
+.container-productos .producto p, .container-productos .producto h3 {
+  margin: 0;
+}
+.container-productos .producto h3 {
+  font-family: "Grenze Gotisch", serif;
+}
+
+.container-opiniones {
+  background-color: #fff;
+  margin: 1rem 0 3rem 0;
+}
+.container-opiniones h2 {
+  margin-top: 2rem;
+}
+
+.carousel-inner {
+  height: 20vh;
+}
+.carousel-inner img {
+  width: 80%;
+  max-height: 40vh;
+}
+
+.container-inicio-sesion, .submit {
+  border-width: 0.1vh;
+}
+
+.container-inicio-sesion {
+  margin: 10vh 0 10vh 0;
+  padding: 10vh;
+}
+.container-inicio-sesion h3 {
+  font-family: "Assistant", sans-serif;
+  font-size: 2vh;
+}
+.container-inicio-sesion input {
+  border: none;
+  border-bottom: solid #121212;
+  border-width: 0.1vh;
+  width: 32vh;
+  margin: 2.5vh;
+}
+
+.link-submit {
+  margin-top: 4vh;
+}
+.link-submit a {
+  color: #121212;
+  text-decoration: underline;
+}
+.link-submit .submit-button {
+  margin-top: 2vh;
+  width: 12vh;
+  height: 3.5vh;
+  background-color: #121212;
+  color: #fff;
+  border: solid #121212;
+  transition: all 0.2s;
+}
+.link-submit .submit-button:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .super-container-inicio-sesion {
+    display: inline-block;
+  }
+  .container-inicio-sesion {
+    border: solid #121212 0.1vh;
+    border-radius: 1vh;
+  }
+}
+.container-contacto {
+  margin-bottom: 10vh;
+}
+.container-contacto h2 {
+  font-family: "Grenze Gotisch", serif;
+  margin: 3vh 0 2vh 5vh;
+  text-align: start;
+}
+.container-contacto .info {
+  background-color: #121212;
+}
+.container-contacto .info input {
+  border: solid #fff 0.1vh;
+  background-color: #121212;
+  color: #fff;
+  height: 5vh;
+  min-width: 40vh;
+  margin: 2vh 1vh 1vh 1vh;
+  text-align: left;
+}
+.container-contacto .info .input-comentario {
+  min-height: 10rem;
+  resize: none;
+}
+.container-contacto .submit-button {
+  margin-bottom: 4vh;
+  width: 12vh;
+  height: 4vh;
+  background-color: rgb(243, 243, 243);
+  color: #121212;
+  border: solid rgb(243, 243, 243);
+  transition: all 0.2s;
+}
+.container-contacto .submit-button:hover {
+  transform: scale(1.1);
+}
+
+.footer {
+  height: 10vh;
+  flex-wrap: nowrap;
+}
+
+.medios-de-contacto {
+  padding-top: 2vh;
+}
+.medios-de-contacto img {
+  height: 2vh;
+}
+
+.medios-de-pago img {
+  height: 4vh;
+}
+
+.copyrigth {
+  font-size: 1.5vh;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
